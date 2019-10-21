@@ -11,7 +11,8 @@ function changePage(pagee) {
     request.send();
 }
 function myFunction(myObj, page) {
-    document.getElementById
+    var elements = document.getElementsByTagName('table');
+    while (elements[0]) elements[0].parentNode.removeChild(elements[0]);
 
     var table = document.createElement("table");
     var row = document.createElement("tr");
@@ -49,7 +50,7 @@ function myFunction(myObj, page) {
 }
 
 function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("mySidenav").style.width = "300px";
 }
 
 function closeNav() {
