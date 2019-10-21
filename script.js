@@ -29,13 +29,20 @@ function myFunction(myObj, page) {
         row.appendChild(column);
         table.appendChild(row);
         if (myObj[page].info[i].type == "multiple") {
-            var row = document.createElement("tr");
-            var column = document.createElement("td");
+            var mini_table = document.createElement("table");
+            mini_table.classList.add("table-borderless");
+            mini_table.classList.add("text-center");
+
             for (let j = 0; j < myObj[page].info[i].data.length; j++) {
+                var mini_row = document.createElement("tr");
+                var row = document.createElement("tr");
+                var column = document.createElement("td");
                 //document.write(myObj.page1.info[i].data[j] + '<br><br>');
-                column.innerText += myObj[page].info[i].data[j];
+                column.innerText = myObj[page].info[i].data[j];
+                mini_row.appendChild(column);
+                mini_table.appendChild(mini_row);
             }
-            row.appendChild(column);
+            row.appendChild(mini_table);
             table.appendChild(row);
         } else {
             //document.write(myObj.page1.info[i].data + '<br><br>');
