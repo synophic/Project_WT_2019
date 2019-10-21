@@ -31,7 +31,6 @@ function myFunction(myObj, page) {
         if (myObj[page].info[i].type == "multiple") {
             var mini_table = document.createElement("table");
             mini_table.classList.add("table-borderless");
-            mini_table.classList.add("text-center");
 
             for (let j = 0; j < myObj[page].info[i].data.length; j++) {
                 var mini_row = document.createElement("tr");
@@ -53,7 +52,8 @@ function myFunction(myObj, page) {
             table.appendChild(row);
         }
     }
-    document.body.appendChild(table);
+    let box = document.querySelector("#boxbox");
+    box.appendChild(table);
 }
 
 function openNav() {
