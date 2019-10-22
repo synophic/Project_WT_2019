@@ -1,3 +1,28 @@
+html {
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: green; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rebeccapurple; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(138, 83, 192); 
+  }
+
 body {
     font-family: "Lato", sans-serif;
 }
@@ -9,8 +34,8 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
-    overflow-x: hidden;
+    background-color: rgba(17, 17, 17, 0.925);
+    overflow: hidden;
     transition: 0.5s;
     padding-top: 60px;
 }
@@ -36,6 +61,13 @@ body {
     margin-left: 50px;
 }
 
+.minisidenav {
+    height: 100vh;
+    overflow: auto;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
+}
+
 @media screen and (max-height: 450px) {
     .sidenav {
         padding-top: 15px;
@@ -43,4 +75,8 @@ body {
     .sidenav a {
         font-size: 18px;
     }
+}
+
+h3{
+    color: rgba(255, 255, 255, 0.856);
 }

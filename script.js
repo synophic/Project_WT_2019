@@ -58,8 +58,10 @@ function myFunction(myObj, page) {
 
 function openNav() {
     document.getElementById("mySidenav").style.width = "300px";
+    document.getElementById("box").style.opacity = "0.3";
 }
 
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("box").style.opacity = "1";
 }
