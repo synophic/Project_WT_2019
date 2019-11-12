@@ -1,27 +1,37 @@
 html {
     scrollbar-color: rebeccapurple green;
     scrollbar-width: thin;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow-x: hidden;
 }
 
 /* width */
+
 ::-webkit-scrollbar {
     width: 8px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: green; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rebeccapurple; 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgb(138, 83, 192); 
-  }
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: green;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: rebeccapurple;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(138, 83, 192);
+}
 
 body {
     font-family: "Lato", sans-serif;
@@ -77,6 +87,55 @@ body {
     }
 }
 
-h3{
+h3 {
     color: rgba(255, 255, 255, 0.856);
+}
+
+th {
+    width: 100vw;
+    height: 50vh;
+}
+
+.video-warpper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9  res*/
+    padding-top: 25px;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+.video-warpper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.1);
+}
+
+.vid-info {
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    top: 25vh;
+    left: 10vw;
+    color: #fff;
+    font-family: 'Kanit', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 10px 15px 20px black;
+    width: 80%;
+}
+
+@media all and (max-width: 600px) {
+    .vid-info {
+        padding: .5rem;
+    }
+}
+
+@media all and (min-width: 900px) {
+    .vid-info {
+        font-size: 8rem;
+    }
 }

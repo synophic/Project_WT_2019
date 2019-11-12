@@ -21,11 +21,21 @@ function myFunction(myObj, page) {
     table.classList.add("text-center");
     //document.write(myObj.page1.topic + '<br><br>');
     for (let i = 0; i < myObj[page].info.length; i++) {
-        //document.write(myObj.page1.info[i].title + '<br>');
+        //document.write(myObj.page1.info[ i].title + '<br>');
         var row = document.createElement("tr");
-        var hcolumn = document.createElement("th");
-        var column = document.createElement("td");
-        column.innerText = myObj[page].info[i].title;
+        if (i == 0) {
+            var column = document.createElement("th");
+            column.innerHTML += '<div class="video-warpper">' +
+                '<div class="video-foreground embed-responsive-16by9">' +
+                '<iframe src="https://www.youtube.com/embed/0blgmlUY1Qc?controls=0&start=3&end=4&autoplay=1&mute=1&showinfo=0&autohide=1&rel=0&loop=1&playlist=0blgmlUY1Qc" frameborder="0" allowfullscreen></iframe>' +
+                '</div>' +
+                '</div>';
+            column.innerHTML += '<div class="vid-info">' + myObj[page].info[i].title + '</div>';
+        }
+        else {
+            var column = document.createElement("td");
+            column.innerText = myObj[page].info[i].title;
+        }
         row.appendChild(column);
         table.appendChild(row);
         if (myObj[page].info[i].type == "multiple") {
