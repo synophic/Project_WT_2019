@@ -37,7 +37,6 @@ body {
     color: white;
 }
 
-
 .sidenav {
     height: 100%;
     width: 0;
@@ -103,7 +102,7 @@ body {
     }
 }
 
-#box{
+#box {
     transition: 1s;
     overflow-x: hidden;
 }
@@ -111,7 +110,8 @@ body {
 h3 {
     color: rgba(255, 255, 255, 0.856);
 }
-.container-fluid{
+
+.container-fluid {
     padding: 0;
 }
 
@@ -129,11 +129,10 @@ h3 {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
     transform: scale(1);
     top: -60px;
-    height: calc(100vh + 120px);
+    height: calc(100% - 10px);
 }
 
 .vid-info {
@@ -160,16 +159,24 @@ h3 {
     }
 }
 
-.container-fluid :not(:first-child){
+.container-fluid :not(:first-child) {
     margin: 30px;
 }
 
-@keyframes fade-ill{
-    25%{transform: translateY(70vh); opacity: 0;}
-    85%{transform: translateY(0vh); opacity: 0.2;}
-    100%{opacity: 1;}
+@keyframes fade-ill {
+    25% {
+        transform: translateY(70vh);
+        opacity: 0;
+    }
+    85% {
+        transform: translateY(0vh);
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
-img{
+img {
     width: 75%;
 }

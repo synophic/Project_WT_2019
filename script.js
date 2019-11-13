@@ -32,7 +32,7 @@ function changePage(page) {
             var column = document.createElement("div");
             column.classList.add("col");
             column.innerHTML += '<div class="video-warpper">' +
-                '<div class="video-foreground embed-responsive-16by9">' +
+                '<div class="video-foreground">' +
                 '<iframe src="https://www.youtube.com/embed/' +
                 myJSON[page].info[i].video +
                 '?controls=0&autoplay=1&mute=1&start=3&autohide=1&rel=0&loop=1&playlist=' +
@@ -45,40 +45,42 @@ function changePage(page) {
         else {
             var column = document.createElement("div");
             column.classList.add("col", "lead");
-            column.innerText = myJSON[page].info[i].title;
+            column.innerHTML += "<u>" + myJSON[page].info[i].title + "</u>";
         }
         row.appendChild(column);
         container.appendChild(row);
-            var mini_container = document.createElement("row");
+        var mini_container = document.createElement("row");
 
-            for (let j = 0; j < myJSON[page].info[i].data.length; j++) {
-                var mini_row = document.createElement("div");
-                mini_row.classList.add("row");
-                var column = document.createElement("div");
+        for (let j = 0; j < myJSON[page].info[i].data.length; j++) {
+            var mini_row = document.createElement("div");
+            mini_row.classList.add("row");
+            var column = document.createElement("div");
+            column.classList.add("col");
+            //document.write(myJSON.page1.info[i].data[j] + '<br><br>');
+            console.log(typeof (myJSON[page].info[i].data[j][0]));
+            if (typeof (myJSON[page].info[i].data[j][0]) == 'object') {
+                column.classList.add("align-items-center");
+                var column2 = document.createElement("div");
+                var image = document.createElement("img");
 
-                //document.write(myJSON.page1.info[i].data[j] + '<br><br>');
-                console.log(typeof (myJSON[page].info[i].data[j][0]));
-                if (typeof (myJSON[page].info[i].data[j][0]) == 'object') {
-                    var column2 = document.createElement("div");
-                    var image = document.createElement("img");
 
-                    column.classList.add("col");
-                    column2.classList.add("text-center", myJSON[page].info[i].data[j][2] == "left"? "col":"col-11");
-                    column.innerText = myJSON[page].info[i].data[j][0];
-                    image.src = "pic/" + myJSON[page].info[i].data[j][1];
-                    column2.appendChild(image);
-                    mini_row.appendChild(column2);
-
-                } else {
-                    column.innerText = myJSON[page].info[i].data[j];
-                    column.classList.add("col");
-                }
+                column2.classList.add("text-center", myJSON[page].info[i].data[j][2] == "left" ? "col-md-6" : "col-md-12");
+                column.innerText = myJSON[page].info[i].data[j][0];
+                image.src = "pic/" + myJSON[page].info[i].data[j][1];
+                column2.appendChild(image);
                 mini_row.appendChild(column);
-                mini_container.appendChild(mini_row);
+                mini_row.appendChild(column2);
 
+            } else {
+                column.innerText = myJSON[page].info[i].data[j];
+                column.classList.add("col-md-12", "col-sm-12");
+                mini_row.appendChild(column);
             }
-            row.appendChild(mini_container);
-            container.appendChild(row);
+            mini_container.appendChild(mini_row);
+
+        }
+        row.appendChild(mini_container);
+        container.appendChild(row);
     }
     elements.appendChild(container);
 }
