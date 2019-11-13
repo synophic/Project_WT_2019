@@ -34,7 +34,7 @@ function changePage(page) {
             column.innerHTML += '<div class="video-warpper">' +
                 '<div class="video-foreground embed-responsive-16by9">' +
                 '<iframe src="https://www.youtube.com/embed/' +
-                (typeof(myJSON[page].info[i].video != "string") ? myJSON['page1'].info[i].video : myJSON[page].info[i].video) +
+                myJSON[page].info[i].video+
                 '?controls=0&autoplay=1&mute=1&autohide=1&rel=0&loop=1&playlist=0blgmlUY1Qc" frameborder="0" allowfullscreen></iframe>' +
                 '</div>' +
                 '</div>';
