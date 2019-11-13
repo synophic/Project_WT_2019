@@ -49,7 +49,6 @@ function changePage(page) {
         }
         row.appendChild(column);
         container.appendChild(row);
-        if (myJSON[page].info[i].type == "multiple") {
             var mini_container = document.createElement("row");
 
             for (let j = 0; j < myJSON[page].info[i].data.length; j++) {
@@ -80,17 +79,6 @@ function changePage(page) {
             }
             row.appendChild(mini_container);
             container.appendChild(row);
-        } else {
-            //document.write(myJSON.page1.info[i].data + '<br><br>');
-            var row = document.createElement("div");
-            row.classList.add("row");
-            var column = document.createElement("div");
-            column.classList.add("col");
-            column.innerText = myJSON[page].info[i].data;
-            row.appendChild(column);
-            container.appendChild(row);
-            container.appendChild(document.createElement("br"));
-        }
     }
     elements.appendChild(container);
 }
