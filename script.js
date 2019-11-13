@@ -56,11 +56,27 @@ function changePage(page) {
                 var mini_row = document.createElement("div");
                 mini_row.classList.add("row");
                 var column = document.createElement("div");
-                column.classList.add("col");
+
                 //document.write(myJSON.page1.info[i].data[j] + '<br><br>');
-                column.innerText = myJSON[page].info[i].data[j];
+                console.log(typeof (myJSON[page].info[i].data[j][0]));
+                if (typeof (myJSON[page].info[i].data[j][0]) == 'object') {
+                    var column2 = document.createElement("div");
+                    var image = document.createElement("img");
+
+                    column.classList.add("col-6");
+                    column2.classList.add("col-6");
+                    column.innerText = myJSON[page].info[i].data[j][0];
+                    image.src = "pic/" + myJSON[page].info[i].data[j][1];
+                    column2.appendChild(image);
+                    mini_row.appendChild(column2);
+
+                } else {
+                    column.innerText = myJSON[page].info[i].data[j];
+                    column.classList.add("col");
+                }
                 mini_row.appendChild(column);
                 mini_container.appendChild(mini_row);
+
             }
             row.appendChild(mini_container);
             container.appendChild(row);
