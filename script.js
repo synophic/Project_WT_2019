@@ -72,7 +72,7 @@ function changePage(page) {
                 mini_row.appendChild(column2);
 
             } else {
-                column.innerText = myJSON[page].info[i].data[j];
+                column.innerHTML += myJSON[page].info[i].data[j];
                 column.classList.add("col-md-12", "col-sm-12");
                 mini_row.appendChild(column);
             }
