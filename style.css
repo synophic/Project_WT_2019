@@ -74,6 +74,13 @@ body {
     scrollbar-width: thin;
 }
 
+.sidenavbutt {
+    position: fixed;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 3;
+}
+
 @media screen and (max-height: 450px) {
     .sidenav {
         padding-top: 15px;
@@ -87,15 +94,16 @@ h3 {
     color: rgba(255, 255, 255, 0.856);
 }
 
-
 .video-warpper {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9  res*/
+    padding-bottom: 56.25%;
+    /* 16:9  res*/
     padding-top: 25px;
     height: 0;
     overflow: hidden;
     pointer-events: none;
 }
+
 .video-warpper iframe {
     position: absolute;
     top: 0;

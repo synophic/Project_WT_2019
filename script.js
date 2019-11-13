@@ -31,7 +31,6 @@ function changePage(page) {
         if (i == 0) {
             var column = document.createElement("div");
             column.classList.add("col");
-            column.classList.add("col");
             column.innerHTML += '<div class="video-warpper">' +
                 '<div class="video-foreground embed-responsive-16by9">' +
                 '<iframe src="https://www.youtube.com/embed/0blgmlUY1Qc?controls=0&autoplay=1&mute=1&autohide=1&rel=0&loop=1&playlist=0blgmlUY1Qc" frameborder="0" allowfullscreen></iframe>' +
@@ -42,6 +41,7 @@ function changePage(page) {
         else {
             var column = document.createElement("div");
             column.classList.add("col");
+            column.classList.add("lead");
             column.innerText = myJSON[page].info[i].title;
         }
         row.appendChild(column);
