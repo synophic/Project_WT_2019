@@ -33,6 +33,10 @@ body {
     font-family: 'Charm', cursive;
 }
 
+div {
+    margin: 5px;
+}
+
 .sidenav {
     height: 100%;
     width: 0;
