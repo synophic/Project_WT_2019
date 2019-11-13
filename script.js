@@ -12,20 +12,25 @@ function load(pagee) {
     request.send();
 }
 function changePage(page) {
-    var elements = document.getElementsByTagName('table');
-    while (elements[0]) elements[0].parentNode.removeChild(elements[0]);
+    var elements = document.querySelector("#boxbox");
+    //while (elements[0]) elements[0].parentNode.removeChild(elements[0]);
+    elements.innerHTML = "";
 
-    var table = document.createElement("table");
-    var row = document.createElement("tr");
-    var column = document.createElement("td");
-    table.classList.add("table");
-    table.classList.add("text-center");
+    var container = document.createElement("div");
+    container.classList.add("container");
+    container.classList.add("text-center");
+    var row = document.createElement("div");
+    row.classList.add("row");
+    var column = document.createElement("div");
+    column.classList.add("col");
     //document.write(myJSON.page1.topic + '<br><br>');
     for (let i = 0; i < myJSON[page].info.length; i++) {
         //document.write(myJSON.page1.info[ i].title + '<br>');
-        var row = document.createElement("tr");
+        var row = document.createElement("div");
+        row.classList.add("row");
         if (i == 0) {
-            var column = document.createElement("th");
+            var column = document.createElement("div");
+            column.classList.add("col");
             column.innerHTML += '<div class="video-warpper">' +
                 '<div class="video-foreground embed-responsive-16by9">' +
                 '<iframe src="https://www.youtube.com/embed/0blgmlUY1Qc?controls=0&autoplay=1&mute=1&autohide=1&rel=0&loop=1&playlist=0blgmlUY1Qc" frameborder="0" allowfullscreen></iframe>' +
@@ -38,33 +43,36 @@ function changePage(page) {
             column.innerText = myJSON[page].info[i].title;
         }
         row.appendChild(column);
-        table.appendChild(row);
+        container.appendChild(row);
         if (myJSON[page].info[i].type == "multiple") {
-            var mini_table = document.createElement("table");
-            mini_table.classList.add("table-borderless");
+            var mini_container = document.createElement("row");
 
             for (let j = 0; j < myJSON[page].info[i].data.length; j++) {
-                var mini_row = document.createElement("tr");
-                var row = document.createElement("tr");
-                var column = document.createElement("td");
+                var mini_row = document.createElement("div");
+                mini_row.classList.add("row");
+                var column = document.createElement("div");
+                column.classList.add("col");
                 //document.write(myJSON.page1.info[i].data[j] + '<br><br>');
                 column.innerText = myJSON[page].info[i].data[j];
                 mini_row.appendChild(column);
-                mini_table.appendChild(mini_row);
+                mini_container.appendChild(mini_row);
             }
-            row.appendChild(mini_table);
-            table.appendChild(row);
+            row.appendChild(mini_container);
+            container.appendChild(row);
         } else {
             //document.write(myJSON.page1.info[i].data + '<br><br>');
-            var row = document.createElement("tr");
-            var column = document.createElement("td");
+            var row = document.createElement("div");
+            row.classList.add("row");
+            var column = document.createElement("div");
+            column.classList.add("col");
             column.innerText = myJSON[page].info[i].data;
             row.appendChild(column);
-            table.appendChild(row);
+            container.appendChild(row);
+            container.appendChild(document.createElement("br"));
         }
     }
     let box = document.querySelector("#boxbox");
-    box.appendChild(table);
+    box.appendChild(container);
 }
 
 function openNav() {
