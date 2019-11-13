@@ -33,15 +33,16 @@ function changePage(page) {
             column.classList.add("col");
             column.innerHTML += '<div class="video-warpper">' +
                 '<div class="video-foreground embed-responsive-16by9">' +
-                '<iframe src="https://www.youtube.com/embed/0blgmlUY1Qc?controls=0&autoplay=1&mute=1&autohide=1&rel=0&loop=1&playlist=0blgmlUY1Qc" frameborder="0" allowfullscreen></iframe>' +
+                '<iframe src="https://www.youtube.com/embed/' +
+                (typeof(myJSON[page].info[i].video != "string") ? myJSON['page1'].info[i].video : myJSON[page].info[i].video) +
+                '?controls=0&autoplay=1&mute=1&autohide=1&rel=0&loop=1&playlist=0blgmlUY1Qc" frameborder="0" allowfullscreen></iframe>' +
                 '</div>' +
                 '</div>';
             column.innerHTML += '<div class="vid-info">' + myJSON[page].info[i].title + '</div>';
         }
         else {
             var column = document.createElement("div");
-            column.classList.add("col");
-            column.classList.add("lead");
+            column.classList.add("col", "lead");
             column.innerText = myJSON[page].info[i].title;
         }
         row.appendChild(column);

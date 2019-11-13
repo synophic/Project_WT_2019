@@ -32,6 +32,8 @@ html {
 body {
     font-size: larger;
     font-family: 'Charm', cursive;
+    background: black;
+    color: white;
 }
 
 div {
