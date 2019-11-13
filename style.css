@@ -38,20 +38,21 @@ body {
 }
 
 div {
-    margin: 5px;
+    padding: 5px;
 }
 
 .sidenav {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 3;
     top: 0;
     left: 0;
     background-color: rgba(17, 17, 17, 0.925);
     overflow: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding: 0;
+    padding-top: 30px;
 }
 
 .sidenav a {
@@ -83,10 +84,16 @@ div {
 }
 
 .sidenavbutt {
+    width: 170px;
+    height: 160px;
+    padding-top: 50px;
+    top: -50px;
     position: fixed;
     font-size: 30px;
     cursor: pointer;
-    z-index: 3;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.521);
+    border-bottom-right-radius: 100%;
 }
 
 @media screen and (max-height: 450px) {
