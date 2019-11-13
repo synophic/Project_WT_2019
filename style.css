@@ -135,23 +135,17 @@ h3 {
     text-align: center;
     vertical-align: middle;
     top: 25vh;
-    left: 10vw;
+    left: -0.1vw;
     color: #fff;
     font-size: 3rem;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 2;
     text-shadow: 10px 15px 20px black;
-    width: 80%;
-}
-
-@media all and (max-width: 600px) {
-    .vid-info {
-        padding: .5rem;
-    }
+    width: 100%;
 }
 
 @media all and (min-width: 900px) {
     .vid-info {
-        font-size: 8rem;
+        font-size: 4rem;
     }
 }
