@@ -105,6 +105,7 @@ body {
 
 #box{
     transition: 1s;
+    overflow-x: hidden;
 }
 
 h3 {
@@ -148,15 +149,9 @@ h3 {
     text-shadow: 10px 15px 20px black;
     width: 80%;
     transition: 0.3s;
-    animation: fade-ill 2s ease-in-out;
-}
-
-.vid-info:hover{
-    transform: scale(1.1) translateY(-10%);
-}
-
-.vid-info:active{
-    transform: scale(0.9) translateY(10%);
+    opacity: 0;
+    animation: fade-ill 1.5s ease-out forwards;
+    animation-delay: 0.5s;
 }
 
 @media all and (min-width: 900px) {
@@ -170,6 +165,7 @@ h3 {
 }
 
 @keyframes fade-ill{
-    0%{transform: scale(0) translateY(-50vh);}
-    75%{transform: scale(1.2) translateY(10vh);}
+    25%{transform: translateY(70vh); opacity: 0;}
+    85%{transform: translateY(0vh); opacity: 0.2;}
+    100%{opacity: 1;}
 }
