@@ -169,3 +169,7 @@ h3 {
     85%{transform: translateY(0vh); opacity: 0.2;}
     100%{opacity: 1;}
 }
+
+img{
+    width: 75%;
+}

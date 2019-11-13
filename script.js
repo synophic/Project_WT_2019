@@ -64,7 +64,7 @@ function changePage(page) {
                     var image = document.createElement("img");
 
                     column.classList.add("col-6");
-                    column2.classList.add("col-6");
+                    column2.classList.add("col-5","text-center");
                     column.innerText = myJSON[page].info[i].data[j][0];
                     image.src = "pic/" + myJSON[page].info[i].data[j][1];
                     column2.appendChild(image);
