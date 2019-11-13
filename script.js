@@ -18,7 +18,7 @@ function changePage(page) {
 
     var container = document.createElement("div");
     container.classList.add("container");
-    container.classList.add("text-center");
+    //container.classList.add("text-center");
     var row = document.createElement("div");
     row.classList.add("row");
     var column = document.createElement("div");
