@@ -79,7 +79,7 @@ function changePage(page) {
 
 function openNav() {
     document.getElementById("mySidenav").style.width = "300px";
-    document.getElementById("box").style.opacity = "0.3";
+    document.getElementById("box").style.opacity = "1";
     document.getElementById("box").style.marginLeft = "300px";
 }
 
