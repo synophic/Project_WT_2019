@@ -59,7 +59,7 @@ function changePage(page) {
             //document.write(myJSON.page1.info[i].data[j] + '<br><br>');
             console.log(typeof (myJSON[page].info[i].data[j][0]));
             if (typeof (myJSON[page].info[i].data[j][0]) == 'object') {
-                column.classList.add("align-items-center");
+                column.classList.add("align-items-center", "text-center");
                 var column2 = document.createElement("div");
                 var image = document.createElement("img");
 
