@@ -12,7 +12,7 @@ function load(pagee) {
     request.send();
 }
 function changePage(page) {
-    var elements = document.querySelector("#boxbox");
+    var elements = document.querySelector("#box");
     //while (elements[0]) elements[0].parentNode.removeChild(elements[0]);
     elements.innerHTML = "";
 
@@ -71,8 +71,7 @@ function changePage(page) {
             container.appendChild(document.createElement("br"));
         }
     }
-    let box = document.querySelector("#boxbox");
-    box.appendChild(container);
+    elements.appendChild(container);
 }
 
 function openNav() {
