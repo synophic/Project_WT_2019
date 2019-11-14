@@ -87,13 +87,17 @@ function changePage(page) {
 
 function openNav() {
     document.getElementById("mySidenav").style.width = "300px";
-    document.getElementById("box").style.opacity = "1";
-    document.getElementById("box").style.marginLeft = "300px";
+    document.getElementById("box").style.opacity = "0.2";
+    document.getElementById("box").style.cursor = "pointer";
+    //document.getElementById("box").style.transform = "scale(0.95)";
+    //document.getElementById("box").style.marginLeft = "300px";
 }
 
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("box").style.opacity = "1";
-    document.getElementById("box").style.marginLeft = "0";
+    document.getElementById("box").style.cursor = "default";
+    //document.getElementById("box").style.transform = "scale(1)";
+    //document.getElementById("box").style.marginLeft = "0";
 }
 
