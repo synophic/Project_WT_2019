@@ -57,7 +57,7 @@ function changePage(page) {
             var column = document.createElement("div");
             column.classList.add("col");
             //document.write(myJSON.page1.info[i].data[j] + '<br><br>');
-            console.log(typeof (myJSON[page].info[i].data[j][0]));
+            //console.log(typeof (myJSON[page].info[i].data[j][0]));
             if (typeof (myJSON[page].info[i].data[j][0]) == 'object') {
                 column.classList.add("align-items-center", "text-center");
                 var column2 = document.createElement("div");
